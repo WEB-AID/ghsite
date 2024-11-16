@@ -51,6 +51,25 @@ export default {
                     '5': 'hsl(var(--chart-5))',
                 },
             },
+            animation: {
+                'spin-pause': 'spinPause 2s linear infinite',
+            },
+            keyframes: {
+                spinPause: {
+                    '0%': {
+                        transform: 'rotate(0deg)',
+                    },
+                    '50%': {
+                        transform: 'rotate(360deg)',
+                    },
+                    '75%': {
+                        transform: 'rotate(360deg)',
+                    },
+                    '100%': {
+                        transform: 'rotate(0deg)',
+                    },
+                },
+            },
             borderRadius: {
                 lg: 'var(--radius)',
                 md: 'calc(var(--radius) - 2px)',

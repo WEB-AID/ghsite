@@ -13,24 +13,23 @@ export const footerMenuItems = [
     { name: 'about', path: '/about' },
     { name: 'learning', path: '/learning' },
     { name: 'vacancies', path: '/vacancies' },
-    { name: 'cooperation', path: '/cooperation' },
 ]
 
 export default function Footer() {
     const { t } = useTranslation()
 
     return (
-        <footer className="h-min p-4 text-white bg-yellow-950">
-            {/* MENU AND LOGO\ISO */}
-            <div className="w-11/12 lg:w-4/5 mt-4 mx-auto flex justify-center items-center flex-col md:flex-row order-1 md:order-2">
-                <ul className="mx-auto grid grid-rows-5 grid-flow-col gap-y-8 gap-x-2 md:grid-rows-3 max-[767px]:grid-cols-2 md:order-2 text-left">
+        <footer className="h-min p-4 text-gray-300  bg-yellow-950">
+            {/* INFO+MENU+CONTACT */}
+            <div className="max-[767px]:w-4/5  mt-4 max-[767px]:ml-12 mr-auto flex justify-around lg:justify-center items-start md:items-center flex-col md:flex-row">
+                <ul className="max-[767px]:mt-8 grid grid-rows-5 max-[767px]:grid-rows-4 grid-flow-col gap-y-4 gap-x-2 md:grid-rows-4 min-[1280px]:gap-x-6 max-[767px]:grid-cols-2 order-2 md:order-2 text-left">
                     {footerMenuItems.map((item) => (
                         <li key={item.name}>
                             <Link
                                 href={item.path}
                                 className="before:content-['·'] before:mr-1"
                             >
-                                <span className="hover:underline">
+                                <span className="hover:underline whitespace-nowrap">
                                     {t(`footerMenu:${item.name}`)}
                                 </span>
                             </Link>
@@ -39,10 +38,10 @@ export default function Footer() {
                 </ul>
                 <svg
                     width="1"
-                    height="200px"
+                    height="180px"
                     viewBox="0 0 1 190"
                     xmlns="http://www.w3.org/2000/svg"
-                    className="order-3 max-[1023px]:hidden"
+                    className="order-3 max-[1023px]:hidden mx-8 min-[1280px]:mx-12"
                 >
                     <line
                         x1="0"
@@ -53,22 +52,28 @@ export default function Footer() {
                         strokeWidth="2"
                     />
                 </svg>
-                <div className="mx-auto flex order-3 md:order-1 md:mt-4 max-[767px]:hidden">
+                <div className="md:w-40vh lg:w-60vh flex flex-col justify-items-start order-1 md:order-1">
                     <Image
                         src="/logo2.png"
                         alt="logo2"
                         width="0"
                         height="0"
                         sizes="100vw"
-                        className="w-20 lg:w-24 mx-auto"
+                        className="w-10 lg:w-14"
                     />
+                    <div className="mt-2">
+                        We provide corporate services, company formation, sales
+                        of ready made companies, company accounts and accounting
+                        in Georgia. We specialize in clouding companies in the
+                        Free Trade Zone and Virtual Zone. We provide virtual
+                    </div>
                 </div>
                 <svg
                     width="1"
                     height="200px"
                     viewBox="0 0 1 190"
                     xmlns="http://www.w3.org/2000/svg"
-                    className="order-1 max-[1023px]:hidden"
+                    className="order-1 max-[1023px]:hidden mx-8 min-[1280px]:mx-12"
                 >
                     <line
                         x1="0"
@@ -79,23 +84,41 @@ export default function Footer() {
                         strokeWidth="2"
                     />
                 </svg>
-                <div className="mx-auto flex order-2 md:order-3 max-[767px]:mt-8">
-                    <Image
-                        src="/logo2.png"
-                        alt="logo2"
-                        width="0"
-                        height="0"
-                        sizes="100vw"
-                        className="w-16 mx-auto md:hidden"
-                    />
-                    <Image
-                        src="/ISO.png"
-                        alt="ISO"
-                        width="0"
-                        height="0"
-                        sizes="100vw"
-                        className="w-52 lg:w-64 max-[767px]:ml-12"
-                    />
+                <div className="flex flex-col order-3 md:order-3 max-[767px]:mt-8">
+                    <div className="">
+                        <h1 className="text-xl">Contact us</h1>
+                        <div className="flex flex-col mt-4">
+                            <div>Besiki 5, 0108, Tbilisi, Georgia</div>
+                            <div>(+995) 555 940 077</div>
+                            <div>info@readymade.ge</div>
+                        </div>
+                    </div>
+                    <div className="flex">
+                        <Image
+                            src="/iconFacebook.svg"
+                            alt="ISO"
+                            width="0"
+                            height="0"
+                            sizes="100vw"
+                            className="w-10 mt-4 "
+                        />
+                        <Image
+                            src="/iconLinkedin.svg"
+                            alt="ISO"
+                            width="0"
+                            height="0"
+                            sizes="100vw"
+                            className="w-10 mt-4 "
+                        />
+                        <Image
+                            src="/ISO.png"
+                            alt="ISO"
+                            width="0"
+                            height="0"
+                            sizes="100vw"
+                            className="w-24 md:w-28 max-[767px]:ml-12 ml-auto mt-4 "
+                        />
+                    </div>
                 </div>
             </div>
             {/* TEXT FIELD */}

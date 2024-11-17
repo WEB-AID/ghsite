@@ -95,10 +95,12 @@ export default function Header() {
             className={`w-full fixed h-24 lg:h-32 bg-white shadow-inner-premium-red z-50 md:mr-10 text-black`}
         >
             <div
-                className={`w-full relative h-full flex md:justify-center ${isBurgerOpen ? 'items-start' : 'items-center'}`}
+                className={`w-full relative h-full flex md:justify-center ${
+                    isBurgerOpen ? 'items-start' : 'items-center'
+                }`}
             >
                 {/* LOGO */}
-                <div className="absolute top-4 lg:top-6 md:mr-5 max-[767px]:right-4">
+                <div className="absolute top-4 lg:top-6 md:-mr-5 max-[767px]:right-4">
                     <Link href="/">
                         <Image
                             src="/logo1.png"
@@ -114,7 +116,9 @@ export default function Header() {
                     {/* MOBILE BURGER BUTTON */}
                     <button
                         onClick={toggleBurger}
-                        className={`ml-7 flex burger-button md:hidden ${isBurgerOpen ? 'hidden' : ''}`}
+                        className={`ml-7 flex burger-button md:hidden ${
+                            isBurgerOpen ? 'hidden' : ''
+                        }`}
                     >
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -162,7 +166,9 @@ export default function Header() {
                     {/* MOBILE BURGER MENU */}
                     <div
                         className={`burger-menu absolute w-full h-auto md:hidden  bg-white -translate-x-full opacity-0 
-                            transition-transform duration-1000 ${isBurgerOpen ? 'translate-x-0 opacity-100' : ''} flex bg-white shadow-outer-orange`}
+                            transition-transform duration-1000 ${
+                                isBurgerOpen ? 'translate-x-0 opacity-100' : ''
+                            } flex bg-white shadow-outer-orange`}
                     >
                         <ul className="w-7/12 top-0 left-0 p-8 flex flex-col gap-12">
                             {menuItems.map((item) => (
@@ -221,7 +227,13 @@ export default function Header() {
                                 key={item.path}
                                 name={t(`headerMenu:${item.name}`)!}
                                 path={item.path}
-                                additionalClass={`${item.type === 'beforeLogo' ? 'mr-10 lg:mr-24' : item.type === 'afterLogo' ? 'ml-24' : ''}`}
+                                additionalClass={`${
+                                    item.type === 'beforeLogo'
+                                        ? 'mr-10 lg:mr-24'
+                                        : item.type === 'afterLogo'
+                                        ? 'ml-24'
+                                        : ''
+                                }`}
                             />
                         ))}
                     </ul>

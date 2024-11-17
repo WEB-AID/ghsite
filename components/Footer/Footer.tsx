@@ -55,7 +55,7 @@ export default function Footer() {
                         strokeWidth="2"
                     />
                 </svg>
-                <div className="border-2 border-black flex flex-row max-[767px]:w-11/12 md:flex-col lg:flex-row md:ml-4 max-[767px]:mr-8 justify-center max-[767px]:items-center lg:items-center md:w-1/4 lg:w-1/2 min-[1280px]:w-2/5">
+                <div className="flex flex-row max-[767px]:w-11/12 md:flex-col lg:flex-row md:ml-4 max-[767px]:mr-8 justify-center max-[767px]:items-center lg:items-center md:w-1/4 lg:w-1/2 min-[1280px]:w-2/5">
                     <Image
                         src="/logo2.png"
                         alt="logo2"

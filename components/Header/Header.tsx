@@ -112,7 +112,10 @@ export default function Header() {
                         />
                     </Link>
                 </div>
-                <nav className={`relative w-64 md:w-full z-20 `}>
+                <nav
+                    className={`relative w-64 md:w-full z-20 `}
+                    aria-label="Header navigation"
+                >
                     {/* MOBILE BURGER BUTTON */}
                     <button
                         onClick={toggleBurger}

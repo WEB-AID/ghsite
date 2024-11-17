@@ -3,7 +3,7 @@ import { initReactI18next } from 'react-i18next/initReactI18next'
 import resourcesToBackend from 'i18next-resources-to-backend'
 import i18nConfig from '@/i18nConfig'
 
-export const i18nNamespaces = ['mainPage', 'common', 'footerMenu', 'headerMenu']
+export const i18nNamespaces = ['mainPage', 'common', 'footer', 'headerMenu']
 
 export default async function initTranslations(
     locale,
@@ -17,9 +17,8 @@ export default async function initTranslations(
 
     if (!resources) {
         i18nInstance.use(
-            resourcesToBackend(
-                (language, namespace) =>
-                    import(`@/locales/${language}/${namespace}.json`)
+            resourcesToBackend((language, namespace) =>
+                import(`@/locales/${language}/${namespace}.json`)
             )
         )
     }

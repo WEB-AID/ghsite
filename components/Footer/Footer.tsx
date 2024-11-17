@@ -22,7 +22,7 @@ export default function Footer() {
         <footer className="h-min pt-4 text-gray-300 bg-yellow-950">
             {/* OURGOAL+MENU+CONTACT */}
             <nav
-                className="mt-4 mr-auto flex flex-col justify-between items-start md:mx-4 max-[767px]:ml-12 md:flex-row md:items-center lg:justify-center"
+                className="mt-4 mr-auto flex flex-col justify-between items-start md:mx-4 max-[767px]:ml-12 md:flex-row md:items-top lg:items-center lg:justify-center"
                 aria-label="Footer navigation"
             >
                 <ul className="grid grid-rows-4 grid-flow-col gap-y-4 gap-x-2 order-2 max-[767px]:mt-4 min-[1280px]:gap-x-6 max-[767px]:grid-cols-2">
@@ -62,7 +62,7 @@ export default function Footer() {
                         width="0"
                         height="0"
                         sizes="100vw"
-                        className="w-24 h-28 lg:h-24 lg:w-20 md:mb-2 lg:mb-0"
+                        className="w-24 h-28 md:h-20 lg:h-24 md:w-16 md:mb-2 lg:mb-0"
                     />
                     <article className="ml-auto md:ml-0 lg:ml-6 max-[767px]:w-8/12">
                         {t('footer:ourGoal')}

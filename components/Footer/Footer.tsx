@@ -22,7 +22,7 @@ export default function Footer() {
         <footer className="h-min pt-6 text-gray-300 bg-yellow-950">
             {/* OURGOAL+MENU+CONTACT */}
             <nav
-                className="mt-4 mr-auto flex flex-col justify-around items-start max-[767px]:ml-12 md:flex-row md:items-center lg:justify-center"
+                className="mt-4 mr-auto flex flex-col justify-around items-start md:mx-4 max-[767px]:ml-12 md:flex-row md:items-center lg:justify-center"
                 aria-label="Footer navigation"
             >
                 <ul className="grid grid-rows-4 grid-flow-col gap-y-4 gap-x-2 order-2 max-[767px]:mt-8 min-[1280px]:gap-x-6 max-[767px]:grid-cols-2">
@@ -55,7 +55,7 @@ export default function Footer() {
                         strokeWidth="2"
                     />
                 </svg>
-                <div className="flex flex-col justify-items-start md:w-30vh lg:w-50vh min-[1280px]:w-60vh">
+                <div className="flex flex-col justify-items-start md:w-20vh lg:w-50vh min-[1280px]:w-60vh">
                     <Image
                         src="/logo2.png"
                         alt="logo2"
@@ -87,10 +87,48 @@ export default function Footer() {
                         <h2 id="footer-contact" className="text-xl">
                             {t('footer:contactUs')}
                         </h2>
-                        <address className="mt-4 flex flex-col  gap-y-1 not-italic">
-                            <div>Akaurta, 1100, Bolnisi, Georgia</div>
-                            <div>(+995) 511 277 273</div>
-                            <div>saxliqartuli@gmail.com</div>
+                        <address className="mt-4 flex flex-col gap-y-1 not-italic">
+                            <a
+                                href="https://www.google.com/maps/place/Akaurta,+1100,+Bolnisi,+Georgia"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center hover:underline whitespace-nowrap"
+                            >
+                                <Image
+                                    src="/iconLocation.png"
+                                    alt="Location Icon"
+                                    width={16}
+                                    height={16}
+                                    className="mr-2"
+                                />
+                                Akaurta, 1100, Bolnisi, Georgia
+                            </a>
+                            <a
+                                href="tel:+995511277273"
+                                className="flex items-center hover:underline"
+                            >
+                                <Image
+                                    src="/iconWhatsApp.png"
+                                    alt="WhatsApp Icon"
+                                    width={16}
+                                    height={16}
+                                    className="mr-2"
+                                />
+                                (+995) 511 277 273
+                            </a>
+                            <a
+                                href="mailto:saxliqartuli@gmail.com"
+                                className="flex items-center hover:underline"
+                            >
+                                <Image
+                                    src="/iconEmail.png"
+                                    alt="Email Icon"
+                                    width={16}
+                                    height={16}
+                                    className="mr-2"
+                                />
+                                saxliqartuli@gmail.com
+                            </a>
                         </address>
                     </section>
                     <div className="mt-4 flex">

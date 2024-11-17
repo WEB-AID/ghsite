@@ -55,7 +55,7 @@ export default function Footer() {
                         strokeWidth="2"
                     />
                 </svg>
-                <div className="flex flex-row md:flex-col lg:flex-row md:ml-4 max-[767px]:mr-8 justify-center max-[767px]:items-center lg:items-center md:w-1/4 lg:w-1/2 min-[1280px]:w-2/5">
+                <div className="border-2 border-black flex flex-row max-[767px]:w-11/12 md:flex-col lg:flex-row md:ml-4 max-[767px]:mr-8 justify-center max-[767px]:items-center lg:items-center md:w-1/4 lg:w-1/2 min-[1280px]:w-2/5">
                     <Image
                         src="/logo2.png"
                         alt="logo2"
@@ -64,7 +64,7 @@ export default function Footer() {
                         sizes="100vw"
                         className="w-24 h-28 lg:h-24 lg:w-20 md:mb-2 lg:mb-0"
                     />
-                    <article className="ml-6 md:ml-0 lg:ml-6">
+                    <article className="ml-auto md:ml-0 lg:ml-6 max-[767px]:w-8/12">
                         {t('footer:ourGoal')}
                     </article>
                 </div>

@@ -42,7 +42,7 @@ export default function Footer() {
                     className="md:w-3/4 lg:w-auto flex flex-col justify-between items-start md:items-center md:flex-row md:items-top lg:justify-center"
                     aria-label="Footer navigation"
                 >
-                    <ul className="grid grid-rows-4 grid-flow-col gap-y-4 gap-x-2 order-2 max-[767px]:mt-8 min-[1280px]:gap-x-6 max-[767px]:grid-cols-2 md:mr-auto md:mx-auto lg:mx-0">
+                    <ul className="grid grid-rows-4 grid-flow-col gap-y-4 gap-x-2 order-2 max-[767px]:mt-8 md:gap-x-3 lg:gap-x-6 max-[767px]:grid-cols-2 md:mr-auto md:mx-auto lg:mx-0">
                         {footerMenuItems.map((item) => (
                             <li key={item.name}>
                                 <Link
@@ -88,7 +88,7 @@ export default function Footer() {
                             strokeWidth="2"
                         />
                     </svg>
-                    <div className="w-64 flex flex-col max-[767px]:mr-4 order-3 max-[767px]:mt-8">
+                    <div className="w-60 flex flex-col max-[767px]:mr-4 order-3 max-[767px]:mt-8">
                         <section aria-labelledby="footer-contact">
                             <h2
                                 id="footer-contact"

@@ -108,7 +108,7 @@ export default function Footer() {
                                 className="flex items-center hover:underline"
                             >
                                 <Image
-                                    src="/iconWhatsApp.png"
+                                    src="/iconWhatsapp.png"
                                     alt="WhatsApp Icon"
                                     width={16}
                                     height={16}

@@ -19,7 +19,7 @@ export default function Footer() {
     const { t } = useTranslation()
 
     return (
-        <footer className="h-min pt-6 text-gray-300 bg-yellow-950">
+        <footer className="h-min pt-4 text-gray-300 bg-yellow-950">
             {/* OURGOAL+MENU+CONTACT */}
             <nav
                 className="mt-4 mr-auto flex flex-col justify-around items-start md:mx-4 max-[767px]:ml-12 md:flex-row md:items-center lg:justify-center"
@@ -182,10 +182,10 @@ export default function Footer() {
                 </div>
             </nav>
             {/* TEXT FIELD */}
-            <p className="mt-8 text-center text-gray-400 text-sm">
+            <p className="mt-8 mx-4 text-center text-gray-400 text-sm">
                 {t('common:footerFirstText')}
             </p>
-            <p className="mt-2 text-center text-gray-400 text-sm">
+            <p className="mx-4 text-center text-gray-400 text-sm">
                 {t('common:footerSecondText')}
             </p>
             {/* COPYRIGHT */}

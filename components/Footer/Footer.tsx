@@ -22,10 +22,10 @@ export default function Footer() {
         <footer className="h-min pt-4 text-gray-300 bg-yellow-950">
             {/* OURGOAL+MENU+CONTACT */}
             <nav
-                className="mt-4 mr-auto flex flex-col justify-around items-start md:mx-4 max-[767px]:ml-12 md:flex-row md:items-center lg:justify-center"
+                className="mt-4 mr-auto flex flex-col justify-between items-start md:mx-4 max-[767px]:ml-12 md:flex-row md:items-center lg:justify-center"
                 aria-label="Footer navigation"
             >
-                <ul className="border-2 border-black grid grid-rows-4 grid-flow-col gap-y-4 gap-x-2 order-2 max-[767px]:mt-8 min-[1280px]:gap-x-6 max-[767px]:grid-cols-2">
+                <ul className="grid grid-rows-4 grid-flow-col gap-y-4 gap-x-2 order-2 max-[767px]:mt-4 min-[1280px]:gap-x-6 max-[767px]:grid-cols-2">
                     {footerMenuItems.map((item) => (
                         <li key={item.name}>
                             <Link
@@ -55,14 +55,14 @@ export default function Footer() {
                         strokeWidth="2"
                     />
                 </svg>
-                <div className="border-2 border-black flex flex-row md:flex-col lg:flex-row justify-items-start lg:justify-center lg:items-center md:w-1/4 lg:w-1/2 min-[1280px]:w-2/5">
+                <div className="flex flex-row md:flex-col lg:flex-row md:ml-4 max-[767px]:mr-8 lg:justify-center lg:items-center md:w-1/4 lg:w-1/2 min-[1280px]:w-2/5">
                     <Image
                         src="/logo2.png"
                         alt="logo2"
                         width="0"
                         height="0"
                         sizes="100vw"
-                        className="w-14 lg:h-24 lg:w-24 md:mb-2 lg:mb-0"
+                        className="w-24 h-28 lg:h-24 lg:w-20 md:mb-2 lg:mb-0"
                     />
                     <article className="ml-6 md:ml-0 lg:ml-6">
                         {t('footer:ourGoal')}
@@ -84,7 +84,7 @@ export default function Footer() {
                         strokeWidth="2"
                     />
                 </svg>
-                <div className="border-2 border-black w-72 flex flex-col order-3 max-[767px]:mt-8 ">
+                <div className="w-72 flex flex-col md:mr-4 order-3 max-[767px]:mt-4 ">
                     <section aria-labelledby="footer-contact">
                         <h2 id="footer-contact" className="text-xl">
                             {t('footer:contactUs')}

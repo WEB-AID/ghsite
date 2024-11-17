@@ -19,10 +19,10 @@ export default function Footer() {
     const { t } = useTranslation()
 
     return (
-        <footer className="h-min p-4 text-gray-300  bg-yellow-950">
-            {/* INFO+MENU+CONTACT */}
-            <div className="max-[767px]:w-4/5  mt-4 max-[767px]:ml-12 mr-auto flex justify-around lg:justify-center items-start md:items-center flex-col md:flex-row">
-                <ul className="max-[767px]:mt-8 grid grid-rows-5 max-[767px]:grid-rows-4 grid-flow-col gap-y-4 gap-x-2 md:grid-rows-4 min-[1280px]:gap-x-6 max-[767px]:grid-cols-2 order-2 md:order-2 text-left">
+        <footer className="h-min p-4 text-gray-300 bg-yellow-950">
+            {/* OURGOAL+MENU+CONTACT */}
+            <div className="mt-4 mr-auto flex flex-col justify-around items-start max-[767px]:ml-12 md:flex-row md:items-center lg:justify-center">
+                <ul className="grid grid-rows-4 grid-flow-col gap-y-4 gap-x-2 order-2 max-[767px]:mt-8 min-[1280px]:gap-x-6 max-[767px]:grid-cols-2">
                     {footerMenuItems.map((item) => (
                         <li key={item.name}>
                             <Link
@@ -41,7 +41,7 @@ export default function Footer() {
                     height="180px"
                     viewBox="0 0 1 190"
                     xmlns="http://www.w3.org/2000/svg"
-                    className="order-3 max-[1023px]:hidden mx-4 min-[1280px]:mx-12"
+                    className="max-[1023px]:hidden mx-4 order-3 min-[1280px]:mx-12"
                 >
                     <line
                         x1="0"
@@ -52,14 +52,14 @@ export default function Footer() {
                         strokeWidth="2"
                     />
                 </svg>
-                <div className="md:w-30vh lg:w-60vh flex flex-col justify-items-start order-1 md:order-1">
+                <div className="flex flex-col justify-items-start md:w-30vh lg:w-50vh min-[1280px]:w-60vh">
                     <Image
                         src="/logo2.png"
                         alt="logo2"
                         width="0"
                         height="0"
                         sizes="100vw"
-                        className="w-10 lg:w-14"
+                        className="w-14 lg:w-14"
                     />
                     <div className="mt-2">
                         We provide corporate services, company formation, sales
@@ -73,7 +73,7 @@ export default function Footer() {
                     height="200px"
                     viewBox="0 0 1 190"
                     xmlns="http://www.w3.org/2000/svg"
-                    className="order-1 max-[1023px]:hidden mx-4 min-[1280px]:mx-12"
+                    className="max-[1023px]:hidden mx-4 order-1 min-[1280px]:mx-12"
                 >
                     <line
                         x1="0"
@@ -84,23 +84,23 @@ export default function Footer() {
                         strokeWidth="2"
                     />
                 </svg>
-                <div className="flex flex-col order-3 md:order-3 max-[767px]:mt-8">
+                <div className="flex flex-col order-3 max-[767px]:mt-8">
                     <div className="">
                         <h1 className="text-xl">Contact us</h1>
-                        <div className="flex flex-col mt-4">
+                        <div className="mt-4 flex flex-col">
                             <div>Besiki 5, 0108, Tbilisi, Georgia</div>
                             <div>(+995) 555 940 077</div>
                             <div>info@readymade.ge</div>
                         </div>
                     </div>
-                    <div className="flex">
+                    <div className="mt-4 flex">
                         <Image
                             src="/iconFacebook.svg"
                             alt="ISO"
                             width="0"
                             height="0"
                             sizes="100vw"
-                            className="w-10 mt-4 "
+                            className="w-10 h-10"
                         />
                         <Image
                             src="/iconLinkedin.svg"
@@ -108,7 +108,7 @@ export default function Footer() {
                             width="0"
                             height="0"
                             sizes="100vw"
-                            className="w-10 mt-4 "
+                            className="w-10 h-10"
                         />
                         <Image
                             src="/ISO.png"
@@ -116,7 +116,7 @@ export default function Footer() {
                             width="0"
                             height="0"
                             sizes="100vw"
-                            className="w-24 md:w-28 max-[767px]:ml-12 ml-auto mt-4 "
+                            className="w-28 h-10 ml-auto max-[767px]:ml-12"
                         />
                     </div>
                 </div>

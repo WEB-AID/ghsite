@@ -41,7 +41,7 @@ export default function Footer() {
                     height="180px"
                     viewBox="0 0 1 190"
                     xmlns="http://www.w3.org/2000/svg"
-                    className="order-3 max-[1023px]:hidden mx-8 min-[1280px]:mx-12"
+                    className="order-3 max-[1023px]:hidden mx-4 min-[1280px]:mx-12"
                 >
                     <line
                         x1="0"
@@ -52,7 +52,7 @@ export default function Footer() {
                         strokeWidth="2"
                     />
                 </svg>
-                <div className="md:w-40vh lg:w-60vh flex flex-col justify-items-start order-1 md:order-1">
+                <div className="md:w-30vh lg:w-60vh flex flex-col justify-items-start order-1 md:order-1">
                     <Image
                         src="/logo2.png"
                         alt="logo2"
@@ -73,7 +73,7 @@ export default function Footer() {
                     height="200px"
                     viewBox="0 0 1 190"
                     xmlns="http://www.w3.org/2000/svg"
-                    className="order-1 max-[1023px]:hidden mx-8 min-[1280px]:mx-12"
+                    className="order-1 max-[1023px]:hidden mx-4 min-[1280px]:mx-12"
                 >
                     <line
                         x1="0"

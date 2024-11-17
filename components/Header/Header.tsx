@@ -168,7 +168,7 @@ export default function Header() {
                     </button>
                     {/* MOBILE BURGER MENU */}
                     <div
-                        className={`burger-menu absolute w-full h-auto md:hidden  bg-white -translate-x-full opacity-0 
+                        className={`burger-menu absolute w-full h-auto md:hidden bg-white -translate-x-full opacity-0 
                             transition-transform duration-1000 ${
                                 isBurgerOpen ? 'translate-x-0 opacity-100' : ''
                             } flex bg-white shadow-outer-orange`}

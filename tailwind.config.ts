@@ -79,6 +79,7 @@ export default {
                 'inner-premium-gray':
                     'inset 0 0 10px 5px rgba(180, 180, 180, 0.2)',
                 'outer-orange': '0 0 15px rgba(255, 165, 0, 0.4)',
+                'outer-brown': '0 0 15px rgba(66, 32, 6)',
             },
             width: {
                 '100vh': '100vh',

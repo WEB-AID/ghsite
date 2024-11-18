@@ -154,11 +154,11 @@ export default function Header() {
                     </button>
                     {/* MOBILE BURGER MENU */}
                     <div
-                        className={`burger-menu w-full h-auto absolute -translate-x-full transition-transform duration-1000 md:hidden opacity-0 bg-white ${
+                        className={`burger-menu w-full absolute -translate-x-full transition-transform duration-1000 md:hidden opacity-0 bg-yellow-950 ${
                             isBurgerOpen ? 'translate-x-0 opacity-100' : ''
-                        } flex shadow-outer-orange bg-white`}
+                        } flex shadow-outer-brown`}
                     >
-                        <ul className="w-7/12 p-8 flex flex-col gap-12">
+                        <ul className="w-7/12 p-8 py-12 flex flex-col gap-12 text-slate-200">
                             {menuItems.map((item) => (
                                 <MenuItem
                                     key={item.path}
@@ -197,7 +197,7 @@ export default function Header() {
                             <Button
                                 variant="outline"
                                 onClick={toggleBurger}
-                                className="p-3 absolute top-2 right-2 md:top-2 md:right-12 lg:right-64 bg-orange-800 text-white"
+                                className="p-3 absolute top-2 right-2 md:top-2 md:right-12 lg:right-64 border-0 bg-orange-800 text-gray-800 font-sans font-semibold"
                             >
                                 {t('common:login')}
                             </Button>
@@ -210,7 +210,7 @@ export default function Header() {
                     {/* DESKTOP HEADER MENU */}
                     <div className="h-full flex items-center justify-center max-[767px]:hidden ">
                         <div className="w-full h-full grid grid-cols-[1fr_auto_1fr] items-center">
-                            <ul className="hidden md:flex md:items-center md:justify-end md:gap-2 lg:gap-10">
+                            <ul className="hidden md:flex md:items-center md:justify-end md:gap-2 lg:gap-10 text-gray-900">
                                 {menuItems
                                     .slice(0, Math.floor(menuItems.length / 2))
                                     .map((item) => (
@@ -222,7 +222,7 @@ export default function Header() {
                                     ))}
                             </ul>
                             <div className="logoFieldReservation w-28 h-full mx-6 flex justify-center items-center lg:w-32 lg:mx-12"></div>
-                            <ul className="hidden md:flex md:items-center md:justify-start md:gap-2 lg:gap-10">
+                            <ul className="hidden md:flex md:items-center md:justify-start md:gap-2 lg:gap-10 text-gray-900">
                                 {menuItems
                                     .slice(Math.floor(menuItems.length / 2))
                                     .map((item) => (
@@ -237,14 +237,14 @@ export default function Header() {
                     </div>
                 </nav>
                 {/* LANGUAGE SELECTOR */}
-                <div className="absolute bottom-2 right-2 max-[767px]:hidden lg:bottom-4 lg:right-4 z-20">
+                <div className="absolute bottom-2 right-2 max-[767px]:hidden lg:bottom-4 lg:right-4 z-20 text-gray-800">
                     <LanguageSelector />
                 </div>
                 {/* USER LOGIN */}
                 <Link href="/login" passHref className="z-20">
                     <Button
                         variant="outline"
-                        className="h-6 absolute top-2 right-2 max-[767px]:hidden lg:top-4 lg:right-64 bg-orange-800 text-white"
+                        className="h-6 absolute top-2 right-2 max-[767px]:hidden lg:top-4 lg:right-64 bg-orange-800 text-gray-800"
                     >
                         {t('common:login')}
                     </Button>

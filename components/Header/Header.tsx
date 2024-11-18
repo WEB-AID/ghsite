@@ -197,7 +197,7 @@ export default function Header() {
                             <Button
                                 variant="outline"
                                 onClick={toggleBurger}
-                                className="p-3 absolute top-2 right-2 md:top-2 md:right-12 lg:right-64 border-0 bg-orange-800 text-gray-800 font-sans font-semibold"
+                                className="p-3 absolute top-2 right-2 md:top-2 md:right-12 lg:right-64 border-0 bg-orange-800 text-slate-200 font-sans font-semibold"
                             >
                                 {t('common:login')}
                             </Button>
@@ -244,7 +244,7 @@ export default function Header() {
                 <Link href="/login" passHref className="z-20">
                     <Button
                         variant="outline"
-                        className="h-6 absolute top-2 right-2 max-[767px]:hidden lg:top-4 lg:right-64 bg-orange-800 text-gray-800"
+                        className="h-6 absolute top-2 right-2 max-[767px]:hidden lg:top-4 lg:right-64 bg-orange-800 text-slate-200"
                     >
                         {t('common:login')}
                     </Button>

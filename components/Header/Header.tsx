@@ -13,9 +13,9 @@ import { Button } from '@/app/uikit/button'
 export const menuItems = [
     { name: 'mainPage', path: '/' },
     { name: 'galery', path: '/galery' },
-    { name: 'about', path: '/about', type: 'beforeLogo' },
+    { name: 'news', path: '/news', type: 'beforeLogo' },
     { name: 'pricing', path: '/pricing', type: 'afterLogo' },
-    { name: 'news', path: '/news' },
+    { name: 'about', path: '/about' },
     { name: 'contact', path: '/contact' },
 ]
 
@@ -45,7 +45,9 @@ export default function Header() {
         onClick?: () => void
         additionalClass?: string
     }) => (
-        <li className={`self-start cursor-pointer ${additionalClass}`}>
+        <li
+            className={`self-start cursor-pointer whitespace-nowrap ${additionalClass}`}
+        >
             <Link
                 href={path}
                 onClick={onClick}
@@ -78,15 +80,14 @@ export default function Header() {
         document.addEventListener('mousedown', handleClickOutside)
 
         if (isBurgerOpen) {
-            document.body.style.position = 'fixed'
-            document.body.style.overflowY = 'scroll'
+            document.body.style.overflowY = 'hidden'
         } else {
-            document.body.style.position = ''
             document.body.style.overflowY = ''
         }
 
         return () => {
             document.removeEventListener('mousedown', handleClickOutside)
+            document.body.style.overflowY = ''
         }
     }, [isBurgerOpen])
 
@@ -95,12 +96,12 @@ export default function Header() {
             className={`w-full fixed h-24 lg:h-32 bg-white shadow-inner-premium-red z-50 md:mr-10 text-black`}
         >
             <div
-                className={`w-full relative h-full flex md:justify-center ${
+                className={` w-full relative h-full flex md:justify-center ${
                     isBurgerOpen ? 'items-start' : 'items-center'
                 }`}
             >
                 {/* LOGO */}
-                <div className="absolute top-4 lg:top-6 md:-mr-5 max-[767px]:right-4">
+                <div className="absolute top-4 lg:top-6  max-[767px]:right-4">
                     <Link href="/">
                         <Image
                             src="/logo1.png"
@@ -113,7 +114,7 @@ export default function Header() {
                     </Link>
                 </div>
                 <nav
-                    className={`relative w-64 md:w-full z-20 `}
+                    className={`relative w-64 md:w-full z-20`}
                     aria-label="Header navigation"
                 >
                     {/* MOBILE BURGER BUTTON */}
@@ -125,44 +126,31 @@ export default function Header() {
                     >
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
-                            width="40"
-                            height="40"
-                            viewBox="0 0 32 32"
+                            width="48"
+                            height="48"
+                            viewBox="0 0 48 48"
                             fill="none"
-                            stroke="#ff7b00"
-                            strokeWidth="1"
                         >
-                            <circle
-                                cx="16"
-                                cy="16"
-                                r="15"
-                                stroke="#914307"
-                                strokeWidth="2"
-                                fill="none"
+                            <rect
+                                y="10"
+                                width="42"
+                                height="6"
+                                rx="3"
+                                fill="#F97316"
                             />
-                            <line
-                                x1="8"
-                                y1="10"
-                                x2="24"
-                                y2="10"
-                                stroke="#914307"
-                                strokeWidth="1"
+                            <rect
+                                y="23"
+                                width="42"
+                                height="6"
+                                rx="3"
+                                fill="#F97316"
                             />
-                            <line
-                                x1="8"
-                                y1="16"
-                                x2="24"
-                                y2="16"
-                                stroke="#914307"
-                                strokeWidth="1"
-                            />
-                            <line
-                                x1="8"
-                                y1="22"
-                                x2="24"
-                                y2="22"
-                                stroke="#914307"
-                                strokeWidth="1"
+                            <rect
+                                y="36"
+                                width="42"
+                                height="6"
+                                rx="3"
+                                fill="#F97316"
                             />
                         </svg>
                     </button>
@@ -224,7 +212,7 @@ export default function Header() {
                     </div>
 
                     {/* DESKTOP HEADER MENU */}
-                    <ul className="hidden md:flex md:justify-center md:items-center md:gap-2 lg:gap-10">
+                    <ul className="hidden md:flex md:justify-center md:items-center md:gap-2 lg:gap-6 min-[1280px]:gap-10">
                         {menuItems.map((item) => (
                             <MenuItem
                                 key={item.path}
@@ -232,9 +220,9 @@ export default function Header() {
                                 path={item.path}
                                 additionalClass={`${
                                     item.type === 'beforeLogo'
-                                        ? 'mr-10 lg:mr-24'
+                                        ? 'mr-24 max-[1280px]:mr-20'
                                         : item.type === 'afterLogo'
-                                        ? 'ml-24'
+                                        ? 'ml-24 max-[1280px]:ml-20'
                                         : ''
                                 }`}
                             />

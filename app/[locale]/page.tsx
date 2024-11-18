@@ -25,7 +25,7 @@ export default async function Home({ params }: HomeProps) {
                         sizes="100vw"
                         className="w-full h-35vh md:h-70vh"
                     />
-                    <p className="absolute w-1/2 left-10 top-4 py-2 md:w-4/5 md:top-10 md:mt-8 lg:mt-4 lg:top-22 text-white font-bold text-xs md:text-lg lg:text-3xl">
+                    <p className="w-1/2 py-2 absolute top-4 left-10 md:w-4/5 md:mt-8 md:top-10 lg:mt-4 lg:top-22 text-white text-xs md:text-lg lg:text-3xl font-bold">
                         {t('plantPhotoText')}
                     </p>
                 </div>

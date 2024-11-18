@@ -76,7 +76,7 @@ export default {
                 sm: 'calc(var(--radius) - 4px)',
             },
             boxShadow: {
-                'inner-premium-red':
+                'inner-premium-gray':
                     'inset 0 0 10px 5px rgba(180, 180, 180, 0.2)',
                 'outer-orange': '0 0 15px rgba(255, 165, 0, 0.4)',
             },

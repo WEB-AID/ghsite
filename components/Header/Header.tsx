@@ -93,15 +93,15 @@ export default function Header() {
 
     return (
         <header
-            className={`w-full fixed h-24 lg:h-32 bg-white shadow-inner-premium-red z-50 md:mr-10 text-black`}
+            className={`w-full h-24 fixed lg:h-32 md:mr-10 bg-white shadow-inner-premium-gray text-black z-50`}
         >
             <div
-                className={` w-full relative h-full flex md:justify-center ${
+                className={`h-full relative flex md:justify-center ${
                     isBurgerOpen ? 'items-start' : 'items-center'
                 }`}
             >
                 {/* LOGO */}
-                <div className="absolute top-4 lg:top-6  max-[767px]:right-4">
+                <div className="absolute top-4 lg:top-6 max-[767px]:right-4">
                     <Link href="/">
                         <Image
                             src="/logo1.png"
@@ -114,13 +114,13 @@ export default function Header() {
                     </Link>
                 </div>
                 <nav
-                    className={`relative w-64 md:w-full z-20`}
+                    className={`w-64 relative md:w-full z-20`}
                     aria-label="Header navigation"
                 >
                     {/* MOBILE BURGER BUTTON */}
                     <button
                         onClick={toggleBurger}
-                        className={`ml-7 flex burger-button md:hidden ${
+                        className={`ml-7 flex md:hidden ${
                             isBurgerOpen ? 'hidden' : ''
                         }`}
                     >
@@ -156,12 +156,11 @@ export default function Header() {
                     </button>
                     {/* MOBILE BURGER MENU */}
                     <div
-                        className={`burger-menu absolute w-full h-auto md:hidden bg-white -translate-x-full opacity-0 
-                            transition-transform duration-1000 ${
-                                isBurgerOpen ? 'translate-x-0 opacity-100' : ''
-                            } flex bg-white shadow-outer-orange`}
+                        className={`burger-menu w-full h-auto absolute -translate-x-full transition-transform duration-1000 md:hidden opacity-0 bg-white ${
+                            isBurgerOpen ? 'translate-x-0 opacity-100' : ''
+                        } flex shadow-outer-orange bg-white`}
                     >
-                        <ul className="w-7/12 top-0 left-0 p-8 flex flex-col gap-12">
+                        <ul className="w-7/12 p-8 flex flex-col gap-12">
                             {menuItems.map((item) => (
                                 <MenuItem
                                     key={item.path}
@@ -178,7 +177,7 @@ export default function Header() {
                             variant="outline"
                             size="icon"
                             onClick={toggleBurger}
-                            className="absolute -right-14 top-4 z-20"
+                            className="absolute top-4 -right-14 z-20"
                         >
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -204,7 +203,7 @@ export default function Header() {
                             <Button
                                 variant="outline"
                                 onClick={toggleBurger}
-                                className="absolute top-2 right-2 md:top-2 md:right-12 lg:right-64 bg-orange-800 text-white p-3"
+                                className="p-3 absolute top-2 right-2 md:top-2 md:right-12 lg:right-64 bg-orange-800 text-white"
                             >
                                 {t('common:login')}
                             </Button>
@@ -212,7 +211,7 @@ export default function Header() {
                     </div>
 
                     {/* DESKTOP HEADER MENU */}
-                    <ul className="hidden md:flex md:justify-center md:items-center md:gap-2 lg:gap-6 min-[1280px]:gap-10">
+                    <ul className="hidden md:flex md:items-center md:justify-center md:gap-2 lg:gap-6 min-[1280px]:gap-10">
                         {menuItems.map((item) => (
                             <MenuItem
                                 key={item.path}
@@ -230,14 +229,14 @@ export default function Header() {
                     </ul>
                 </nav>
                 {/* LANGUAGE SELECTOR */}
-                <div className="absolute bottom-2 lg:bottom-4 right-2 lg:right-4 transform max-[767px]:hidden">
+                <div className="absolute bottom-2 right-2 max-[767px]:hidden lg:bottom-4 lg:right-4">
                     <LanguageSelector />
                 </div>
                 {/* USER LOGIN */}
                 <Link href="/login" passHref>
                     <Button
                         variant="outline"
-                        className="absolute h-6 top-2 lg:top-4 right-2 max-[767px]:hidden lg:right-8 lg:right-64 bg-orange-800 text-white"
+                        className="h-6 absolute top-2 right-2 max-[767px]:hidden lg:top-4 lg:right-64 bg-orange-800 text-white"
                     >
                         {t('common:login')}
                     </Button>

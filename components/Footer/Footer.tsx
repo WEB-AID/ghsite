@@ -21,15 +21,15 @@ export default function Footer() {
     return (
         <footer className="h-min pt-4 text-gray-300 bg-yellow-950">
             {/* OURGOAL+MENU+CONTACT */}
-            <div className="mx-8 flex max-[767px]:flex-col justify-center mt-4">
-                <div className="flex md:block lg:flex flex-row md:flex-col lg:flex-row md:mr-auto lg:mr-0 max-[767px]:items-center lg:items-center md:w-1/4 lg:w-1/2 min-[1280px]:w-2/5">
+            <div className="mx-8 mt-4 flex justify-center max-[767px]:flex-col">
+                <div className="flex flex-row md:block lg:flex md:mr-auto lg:mr-0 md:w-1/4 lg:w-1/2 min-[1280px]:w-2/5 md:flex-col lg:flex-row max-[767px]:items-center lg:items-center">
                     <Image
                         src="/logo2.png"
                         alt="logo2"
                         width="0"
                         height="0"
                         sizes="100vw"
-                        className="float-left w-24 h-28 md:h-14 lg:h-36 lg:w-32 md:w-12 md:mb-2 lg:mb-0 md:mr-6 lg:mr-0"
+                        className="float-left w-24 h-28 md:h-14 md:w-12 md:mr-6 md:mb-2 lg:h-36 lg:w-32 lg:mb-0 lg:mr-0"
                         style={{
                             filter: 'drop-shadow(0 0 15px rgba(255, 165, 0, 0.4))',
                         }}
@@ -39,15 +39,15 @@ export default function Footer() {
                     </article>
                 </div>
                 <nav
-                    className="md:w-3/4 lg:w-auto flex flex-col justify-between items-start md:items-top lg:items-center md:flex-row md:items-top lg:justify-center"
+                    className="flex flex-col justify-between items-start md:w-3/4 lg:w-auto md:items-top md:flex-row md:items-top lg:items-center lg:justify-center"
                     aria-label="Footer navigation"
                 >
-                    <ul className="grid grid-rows-4 grid-flow-col gap-y-4 gap-x-2 order-2 max-[767px]:mt-8 md:gap-x-3 lg:gap-x-6 max-[767px]:grid-cols-2 md:mr-auto md:mx-auto lg:mx-0">
+                    <ul className="grid grid-rows-4 grid-flow-col gap-y-4 gap-x-2 order-2 md:mx-auto lg:mx-0 md:mr-auto max-[767px]:mt-8 md:gap-x-3 lg:gap-x-6 max-[767px]:grid-cols-2">
                         {footerMenuItems.map((item) => (
                             <li key={item.name}>
                                 <Link
                                     href={item.path}
-                                    className="before:content-['·'] before:mr-1 before:text-orange-400"
+                                    className="before:mr-1 before:content-['·'] before:text-orange-400"
                                 >
                                     <span className="hover:underline whitespace-nowrap">
                                         {t(`footer:${item.name}`)}
@@ -88,7 +88,7 @@ export default function Footer() {
                             strokeWidth="2"
                         />
                     </svg>
-                    <div className="w-60 flex flex-col max-[767px]:mr-4 order-3 max-[767px]:mt-8">
+                    <div className="w-60 flex flex-col order-3 max-[767px]:mt-8 max-[767px]:mr-4">
                         <section aria-labelledby="footer-contact">
                             <h2
                                 id="footer-contact"
@@ -96,7 +96,7 @@ export default function Footer() {
                             >
                                 {t('footer:contactUs')}
                             </h2>
-                            <address className="mt-2 md:mt-4 flex flex-col gap-y-1 not-italic font-sans">
+                            <address className="mt-2 flex flex-col gap-y-1 md:mt-4 not-italic font-sans font-medium">
                                 <a
                                     href="https://www.google.com/maps/place/Akaurta,+1100,+Bolnisi,+Georgia"
                                     target="_blank"
@@ -114,7 +114,7 @@ export default function Footer() {
                                 </a>
                                 <a
                                     href="tel:+995511277273"
-                                    className="flex items-center hover:underline mr-auto"
+                                    className="mr-auto flex items-center hover:underline"
                                 >
                                     <Image
                                         src="/iconWhatsapp.png"
@@ -127,7 +127,7 @@ export default function Footer() {
                                 </a>
                                 <a
                                     href="mailto:saxliqartuli@gmail.com"
-                                    className="flex items-center hover:underline  mr-auto"
+                                    className="mr-auto flex items-center hover:underline"
                                 >
                                     <Image
                                         src="/iconEmail.png"
@@ -192,14 +192,14 @@ export default function Footer() {
                 </nav>
             </div>
             {/* TEXT FIELD */}
-            <p className="mt-8 mx-4 text-center text-gray-400 text-sm">
+            <p className="mx-4 mt-8 text-center text-gray-400 text-sm">
                 {t('common:footerFirstText')}
             </p>
             <p className="mx-4 text-center text-gray-400 text-sm">
                 {t('common:footerSecondText')}
             </p>
             {/* COPYRIGHT */}
-            <div className="h-10 flex items-center justify-center mt-4 bg-orange-900">
+            <div className="h-10 mt-4 flex items-center justify-center bg-orange-900">
                 <p className="text-center text-gray-800 font-mono">
                     Copyright © 2024 Georgian House LLC
                 </p>

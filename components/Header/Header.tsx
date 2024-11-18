@@ -120,7 +120,7 @@ export default function Header() {
                     {/* MOBILE BURGER BUTTON */}
                     <button
                         onClick={toggleBurger}
-                        className={`ml-7 flex md:hidden ${
+                        className={`ml-8 flex md:hidden ${
                             isBurgerOpen ? 'hidden' : ''
                         }`}
                     >

@@ -5,14 +5,6 @@ import { usePathname } from 'next/navigation'
 import { useTranslation } from 'react-i18next'
 import i18nConfig from '@/i18nConfig'
 import React from 'react'
-import {
-    Select,
-    SelectValue,
-    SelectTrigger,
-    SelectContent,
-    SelectItem,
-    SelectSeparator,
-} from '@/app/uikit/select'
 
 export default function LanguageSelector() {
     const { i18n } = useTranslation()
@@ -20,7 +12,8 @@ export default function LanguageSelector() {
     const router = useRouter()
     const currentPathname = usePathname()
 
-    const handleChange = (newLocale: string) => {
+    const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+        const newLocale = event.target.value
         const days = 30
         const date = new Date()
         date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000)
@@ -40,23 +33,20 @@ export default function LanguageSelector() {
     }
 
     return (
-        <Select value={currentLocale} onValueChange={handleChange}>
-            <SelectTrigger>
-                <SelectValue placeholder="Выберите язык" />
-            </SelectTrigger>
-            <SelectContent className="radix-select-content">
-                <SelectItem value="ka">
-                    <span>Ge</span>
-                </SelectItem>
-                <SelectSeparator />
-                <SelectItem value="en">
-                    <span>En</span>
-                </SelectItem>
-                <SelectSeparator />
-                <SelectItem value="ru">
-                    <span>Ru</span>
-                </SelectItem>
-            </SelectContent>
-        </Select>
+        <select
+            value={currentLocale}
+            onChange={handleChange}
+            className="p-1 md:px-2 md:p-0 lg:px-2 lg:p-1 border rounded font-sans font-semibold"
+        >
+            <option value="ka" className="font-sans font-semibold">
+                Ge
+            </option>
+            <option value="en" className="font-sans font-semibold">
+                En
+            </option>
+            <option value="ru" className="font-sans font-semibold">
+                Ru
+            </option>
+        </select>
     )
 }

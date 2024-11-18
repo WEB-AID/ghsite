@@ -66,12 +66,7 @@ export default function Header() {
         function handleClickOutside(event: MouseEvent) {
             if (
                 isBurgerOpen &&
-                !(
-                    (event.target as HTMLElement).closest('.burger-menu') ||
-                    (event.target as HTMLElement).closest(
-                        '.radix-select-content'
-                    )
-                )
+                !(event.target as HTMLElement).closest('.burger-menu')
             ) {
                 setBurgerOpen(false)
             }
@@ -101,7 +96,7 @@ export default function Header() {
                 }`}
             >
                 {/* LOGO */}
-                <div className="absolute top-4 lg:top-6 max-[767px]:right-4">
+                <div className="absolute top-4 lg:top-6 max-[767px]:right-4 z-10 md:z-50">
                     <Link href="/">
                         <Image
                             src="/logo1.png"
@@ -114,13 +109,13 @@ export default function Header() {
                     </Link>
                 </div>
                 <nav
-                    className={`w-64 relative md:w-full z-20`}
+                    className={`w-64 h-full relative md:w-full max-[767px]:flex z-20`}
                     aria-label="Header navigation"
                 >
                     {/* MOBILE BURGER BUTTON */}
                     <button
                         onClick={toggleBurger}
-                        className={`ml-8 flex md:hidden ${
+                        className={`ml-8 flex md:hidden my-auto ${
                             isBurgerOpen ? 'hidden' : ''
                         }`}
                     >
@@ -132,21 +127,24 @@ export default function Header() {
                             fill="none"
                         >
                             <rect
-                                y="10"
+                                x="3"
+                                y="8"
                                 width="42"
                                 height="6"
                                 rx="3"
                                 fill="#F97316"
                             />
                             <rect
-                                y="23"
+                                x="3"
+                                y="21"
                                 width="42"
                                 height="6"
                                 rx="3"
                                 fill="#F97316"
                             />
                             <rect
-                                y="36"
+                                x="3"
+                                y="34"
                                 width="42"
                                 height="6"
                                 rx="3"
@@ -194,10 +192,6 @@ export default function Header() {
                                 <line x1="21" y1="3" x2="3" y2="21" />
                             </svg>
                         </Button>
-                        {/* LANGUAGE SELECTOR */}
-                        <div className="absolute bottom-2 right-2 md:hidden md:right-8 font-sans">
-                            <LanguageSelector />
-                        </div>
                         {/* USER LOGIN */}
                         <Link href="/login" passHref>
                             <Button
@@ -208,32 +202,46 @@ export default function Header() {
                                 {t('common:login')}
                             </Button>
                         </Link>
+                        {/* LANGUAGE SELECTOR */}
+                        <div className="absolute bottom-2 right-2 md:hidden md:right-8 font-sans">
+                            <LanguageSelector />
+                        </div>
                     </div>
-
                     {/* DESKTOP HEADER MENU */}
-                    <ul className="hidden md:flex md:items-center md:justify-center md:gap-2 lg:gap-6 min-[1280px]:gap-10">
-                        {menuItems.map((item) => (
-                            <MenuItem
-                                key={item.path}
-                                name={t(`headerMenu:${item.name}`)!}
-                                path={item.path}
-                                additionalClass={`${
-                                    item.type === 'beforeLogo'
-                                        ? 'mr-24 max-[1280px]:mr-20'
-                                        : item.type === 'afterLogo'
-                                        ? 'ml-24 max-[1280px]:ml-20'
-                                        : ''
-                                }`}
-                            />
-                        ))}
-                    </ul>
+                    <div className="h-full flex items-center justify-center max-[767px]:hidden ">
+                        <div className="w-full h-full grid grid-cols-[1fr_auto_1fr] items-center">
+                            <ul className="hidden md:flex md:items-center md:justify-end md:gap-2 lg:gap-10">
+                                {menuItems
+                                    .slice(0, Math.floor(menuItems.length / 2))
+                                    .map((item) => (
+                                        <MenuItem
+                                            key={item.path}
+                                            name={t(`headerMenu:${item.name}`)!}
+                                            path={item.path}
+                                        />
+                                    ))}
+                            </ul>
+                            <div className="logoFieldReservation w-28 h-full mx-6 flex justify-center items-center lg:w-32 lg:mx-12"></div>
+                            <ul className="hidden md:flex md:items-center md:justify-start md:gap-2 lg:gap-10">
+                                {menuItems
+                                    .slice(Math.floor(menuItems.length / 2))
+                                    .map((item) => (
+                                        <MenuItem
+                                            key={item.path}
+                                            name={t(`headerMenu:${item.name}`)!}
+                                            path={item.path}
+                                        />
+                                    ))}
+                            </ul>
+                        </div>
+                    </div>
                 </nav>
                 {/* LANGUAGE SELECTOR */}
-                <div className="absolute bottom-2 right-2 max-[767px]:hidden lg:bottom-4 lg:right-4">
+                <div className="absolute bottom-2 right-2 max-[767px]:hidden lg:bottom-4 lg:right-4 z-20">
                     <LanguageSelector />
                 </div>
                 {/* USER LOGIN */}
-                <Link href="/login" passHref>
+                <Link href="/login" passHref className="z-20">
                     <Button
                         variant="outline"
                         className="h-6 absolute top-2 right-2 max-[767px]:hidden lg:top-4 lg:right-64 bg-orange-800 text-white"

@@ -6,6 +6,8 @@ export default async function Home() {
         <main className="flex flex-col">
             <PlantPhotoBlock />
             <Greetings />
+            <Greetings />
+            <Greetings />
         </main>
     )
 }

@@ -75,14 +75,17 @@ export default function Header() {
         document.addEventListener('mousedown', handleClickOutside)
 
         if (isBurgerOpen) {
-            document.body.style.overflowY = 'hidden'
+            document.body.style.overflow = 'hidden'
+            document.body.style.touchAction = 'none'
         } else {
-            document.body.style.overflowY = ''
+            document.body.style.overflow = ''
+            document.body.style.touchAction = ''
         }
 
         return () => {
             document.removeEventListener('mousedown', handleClickOutside)
-            document.body.style.overflowY = ''
+            document.body.style.overflow = ''
+            document.body.style.touchAction = ''
         }
     }, [isBurgerOpen])
 
@@ -104,7 +107,7 @@ export default function Header() {
                             width="150"
                             height="150"
                             sizes="100vw"
-                            className="w-28 lg:w-32"
+                            className="w-24 lg:w-32"
                         />
                     </Link>
                 </div>

@@ -44,35 +44,34 @@ export default function BurgerMenu({
             </ul>
             {/* USER LOGIN */}
             <div className="absolute top-2 right-2 md:top-2 md:right-12 lg:right-64">
-                <LoginButton additionalClass="h-auto p-2 font-sans font-semibold" />
+                <LoginButton
+                    onClick={() => toggleBurger()}
+                    additionalClass="h-auto p-2 font-sans font-semibold"
+                />
             </div>
-
             {/* LANGUAGE SELECTOR */}
             <div className="absolute bottom-2 right-2 md:hidden md:right-8">
                 <LanguageSelector />
             </div>
             {/* CLOSE BUTTON */}
-            <Button
-                variant="outline"
-                size="icon"
-                onClick={toggleBurger}
-                className="absolute top-4 -right-14 z-20"
-            >
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    width="24"
-                    height="24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                >
-                    <line x1="3" y1="3" x2="21" y2="21" />
-                    <line x1="21" y1="3" x2="3" y2="21" />
-                </svg>
-            </Button>
+            <div className="absolute top-4 -right-14 z-20">
+                <Button variant="outline" size="icon" onClick={toggleBurger}>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        width="24"
+                        height="24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                    >
+                        <line x1="3" y1="3" x2="21" y2="21" />
+                        <line x1="21" y1="3" x2="3" y2="21" />
+                    </svg>
+                </Button>
+            </div>
         </aside>
     )
 }

@@ -1,19 +1,9 @@
 'use client'
 
-import Link from 'next/link'
-import Image from 'next/image'
 import { useTranslation } from 'react-i18next'
-
-export const footerMenuItems = [
-    { name: 'mainPage', path: '/' },
-    { name: 'galery', path: '/galery' },
-    { name: 'pricing', path: '/pricing' },
-    { name: 'news', path: '/news' },
-    { name: 'contact', path: '/contact' },
-    { name: 'about', path: '/about' },
-    { name: 'learning', path: '/learning' },
-    { name: 'vacancies', path: '/vacancies' },
-]
+import FooterContact from '../FooterContact/FooterContact'
+import FooterMenu from '../FooterMenu/FooterMenu'
+import FooterInfo from '../FooterInfo/FooterInfo'
 
 export default function Footer() {
     const { t } = useTranslation()
@@ -22,40 +12,12 @@ export default function Footer() {
         <footer className="h-min pt-4 text-gray-300 bg-yellow-950">
             {/* OURGOAL+MENU+CONTACT */}
             <div className="mx-8 mt-4 flex justify-center max-[767px]:flex-col">
-                <div className="flex flex-row md:block lg:flex md:mr-auto lg:mr-0 md:w-1/4 lg:w-1/2 min-[1280px]:w-2/5 md:flex-col lg:flex-row max-[767px]:items-center lg:items-center">
-                    <Image
-                        src="/logo2.png"
-                        alt="logo2"
-                        width="0"
-                        height="0"
-                        sizes="100vw"
-                        className="float-left w-24 h-28 md:h-14 md:w-12 md:mr-6 md:mb-2 lg:h-36 lg:w-32 lg:mb-0 lg:mr-0"
-                        style={{
-                            filter: 'drop-shadow(0 0 15px rgba(255, 165, 0, 0.4))',
-                        }}
-                    />
-                    <article className="max-[767px]:ml-8 lg:ml-8 max-[767px]:w-8/12 ">
-                        {t('footer:ourGoal')}
-                    </article>
-                </div>
+                <FooterInfo additionalClass="md:mr-auto lg:mr-0" />
                 <nav
                     className="flex flex-col justify-between items-start md:w-3/4 lg:w-auto md:items-top md:flex-row md:items-top lg:items-center lg:justify-center"
                     aria-label="Footer navigation"
                 >
-                    <ul className="grid grid-rows-4 grid-flow-col gap-y-4 gap-x-2 order-2 md:mx-auto lg:mx-0 md:mr-auto max-[767px]:mt-8 md:gap-x-3 lg:gap-x-6 max-[767px]:grid-cols-2">
-                        {footerMenuItems.map((item) => (
-                            <li key={item.name}>
-                                <Link
-                                    href={item.path}
-                                    className="before:mr-1 before:content-['·'] before:text-orange-400"
-                                >
-                                    <span className="hover:underline whitespace-nowrap">
-                                        {t(`footer:${item.name}`)}
-                                    </span>
-                                </Link>
-                            </li>
-                        ))}
-                    </ul>
+                    <FooterMenu additionalClass="order-2 md:mx-auto lg:mx-0 md:mr-auto max-[767px]:mt-8" />
                     <svg
                         width="1"
                         height="180px"
@@ -88,116 +50,18 @@ export default function Footer() {
                             strokeWidth="2"
                         />
                     </svg>
-                    <div className="w-60 flex flex-col order-3 max-[767px]:mt-8 max-[767px]:mr-4">
-                        <section aria-labelledby="footer-contact">
-                            <h2
-                                id="footer-contact"
-                                className="text-lg text-orange-500"
-                            >
-                                {t('footer:contactUs')}
-                            </h2>
-                            <address className="mt-2 flex flex-col gap-y-1 md:mt-4 not-italic font-sans font-medium">
-                                <a
-                                    href="https://www.google.com/maps/place/Akaurta,+1100,+Bolnisi,+Georgia"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="flex items-center hover:underline whitespace-nowrap"
-                                >
-                                    <Image
-                                        src="/iconLocation.png"
-                                        alt="Location Icon"
-                                        width={16}
-                                        height={16}
-                                        className="mr-2"
-                                    />
-                                    Akaurta, 1100, Bolnisi, Georgia
-                                </a>
-                                <a
-                                    href="tel:+995511277273"
-                                    className="mr-auto flex items-center hover:underline"
-                                >
-                                    <Image
-                                        src="/iconWhatsapp.png"
-                                        alt="WhatsApp Icon"
-                                        width={16}
-                                        height={16}
-                                        className="mr-2"
-                                    />
-                                    (+995) 511 277 273
-                                </a>
-                                <a
-                                    href="mailto:saxliqartuli@gmail.com"
-                                    className="mr-auto flex items-center hover:underline"
-                                >
-                                    <Image
-                                        src="/iconEmail.png"
-                                        alt="Email Icon"
-                                        width={16}
-                                        height={16}
-                                        className="mr-2"
-                                    />
-                                    saxliqartuli@gmail.com
-                                </a>
-                            </address>
-                        </section>
-                        <div className="mt-4 flex">
-                            <a
-                                href="https://www.facebook.com/georgian.house.fb/"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                <Image
-                                    src="/iconFacebook.svg"
-                                    alt="Facebook"
-                                    aria-label="Facebook"
-                                    width="0"
-                                    height="0"
-                                    sizes="100vw"
-                                    className="w-10 h-10"
-                                />
-                            </a>
-                            <a
-                                href="https://www.linkedin.com/company/georgianhouse"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                <Image
-                                    src="/iconLinkedin.svg"
-                                    alt="LinkedIn"
-                                    aria-label="LinkedIn"
-                                    width="0"
-                                    height="0"
-                                    sizes="100vw"
-                                    className="w-10 h-10"
-                                />
-                            </a>
-                            <a
-                                href="https://www.iso.org/iso-22000-food-safety-management.html"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="ml-auto"
-                            >
-                                <Image
-                                    src="/ISO.png"
-                                    alt="ISO"
-                                    aria-label="ISOinfo"
-                                    width="0"
-                                    height="0"
-                                    sizes="100vw"
-                                    className="w-28 h-10"
-                                />
-                            </a>
-                        </div>
-                    </div>
+                    <FooterContact additionalClass="order-3 max-[767px]:mt-8 max-[767px]:mr-4" />
                 </nav>
             </div>
             {/* TEXT FIELD */}
-            <p className="mx-4 mt-8 text-center text-gray-400 text-sm">
-                {t('common:footerFirstText')}
-            </p>
-            <p className="mx-4 text-center text-gray-400 text-sm">
-                {t('common:footerSecondText')}
-            </p>
+            <div>
+                <p className="mx-4 mt-8 text-center text-gray-400 text-sm">
+                    {t('common:footerFirstText')}
+                </p>
+                <p className="mx-4 text-center text-gray-400 text-sm">
+                    {t('common:footerSecondText')}
+                </p>
+            </div>
             {/* COPYRIGHT */}
             <div className="h-10 mt-4 flex items-center justify-center bg-orange-900">
                 <p className="text-center text-gray-800 font-mono">

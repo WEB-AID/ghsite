@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import isActivePath from '../helpers/isActivePath'
+import isActivePath from '../../helpers/isActivePath'
 
 export default function MenuItem({
     name,

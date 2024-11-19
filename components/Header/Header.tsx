@@ -73,7 +73,7 @@ export default function Header() {
                     className={`w-64 h-full relative md:w-full max-[767px]:flex z-20`}
                     aria-label="Header navigation"
                 >
-                    {/* MOBILE BURGER BUTTON */}
+                    {/* BURGER MENU */}
                     <BurgerButton
                         toggleBurger={toggleBurger}
                         additionalClass={`${isBurgerOpen ? 'hidden' : ''}`}

@@ -36,7 +36,7 @@ export default function LanguageSelector() {
         <select
             value={currentLocale}
             onChange={handleChange}
-            className="p-0.5 md:px-1 md:p-0 lg:px-2 lg:p-0.5 border rounded font-sans font-semibold"
+            className="p-0.5 md:px-1 md:p-0 lg:px-2 lg:p-0.5 border rounded font-sans font-semibold cursor-pointer"
         >
             <option value="ka" className="font-sans font-semibold">
                 Ge

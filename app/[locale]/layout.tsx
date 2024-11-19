@@ -9,11 +9,11 @@ import { Suspense } from 'react'
 import Loading from './loading'
 import './globals.css'
 
-// const geistSans = localFont({
-//     src: './fonts/GeistVF.woff',
-//     variable: '--font-geist-sans',
-//     weight: '100 900',
-// })
+const geistSans = localFont({
+    src: './fonts/GeistVF.woff',
+    variable: '--font-geist-sans',
+    weight: '100 900',
+})
 
 const geistMono = localFont({
     src: './fonts/GeistMonoVF.woff',
@@ -46,7 +46,7 @@ export default async function RootLayout({
     return (
         <html lang={locale}>
             <body
-                className={`${test.variable} ${geistMono.variable} antialiased`}
+                className={`${test.variable} ${geistMono.variable} ${geistSans.variable} antialiased`}
             >
                 <TranslationsProvider
                     locale={locale}
